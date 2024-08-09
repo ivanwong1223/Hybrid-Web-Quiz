@@ -1,0 +1,77 @@
+POST http://localhost:8080/registration
+Content-Type: application/json
+
+{
+    "studentName": "Sasuke Wong",
+    "studentEmail": "sas@gmail.com",
+    "studentPassword": "sas1223",
+    "confPassword": "sas1223"
+}
+
+
+###
+// Login User
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+    "studentEmail": "john@gmail.com",
+    "studentPassword": "john1223"
+}
+
+
+### Get All Quiz Histories for a Student
+GET http://localhost:8080/history
+Content-Type: application/json
+
+### Get One Quiz History by leaderboardID
+GET http://localhost:8080/history/5
+
+
+### Get Quiz Question by ID
+GET http://localhost:8080/question/2/1
+Content-Type: application/json
+
+### Get All Quiz Questions by quizID
+GET http://localhost:8080/question?quizID=2
+Content-Type: application/json
+
+
+### POST request to submit an answer
+POST http://localhost:8080/submit
+Content-Type: application/json
+
+{
+    "questionID": 4,
+    "selectedChoice": "Here’s an example using a Python script see the documentation."
+}
+
+
+### Submit room code to insert a new row in the leaderboard table
+POST http://localhost:8080/submitRoomCode
+Content-Type: application/json
+
+{
+    "roomCode": "CO7582"
+}
+
+
+### GET the leaderboard of the related roomID
+GET http://localhost:8080/leaderboard/2
+Content-Type: application/json
+
+
+### Update User
+PATCH http://localhost:8080/modify/14
+Content-Type: application/json
+
+{
+  "studentName": "John Paulose",
+  "studentEmail": "john@gmail.com",
+  
+  "studentPassword": "john1223",
+  "confPassword": "john1223",
+  "studentInstitution": "Asia Pacific University",
+  "studentEducation": "Master's Degree"
+}
+
